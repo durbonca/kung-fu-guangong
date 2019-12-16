@@ -1,0 +1,107 @@
+header {
+    position: relative;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+    header {
+        /* background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll; */
+    }
+    header video {
+        /* display: none; */
+    }
+}
+
+.flex-container-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.fire-logo {
+    position: absolute;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: red;
+    top: 10%;
+    animation: fire 10s alternate infinite;
+}
+
+#hero_tittle {
+    color: red;
+    font-family: 'Stylish', sans-serif;
+}
+
+#logo {
+    width: 12em;
+    position: relative;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+#whatsapp {
+    color: #6FE569;
+}
+
+#instagram {
+    color: #994B8F;
+}
+
+#facebook {
+    color: #1677F2;
+}
+
+@keyframes fire {
+    0% {
+        background-color: red;
+        /*  transform: scale(1, 1); */
+    }
+    25% {
+        background-color: black;
+    }
+    50% {
+        background-color: red;
+        /* transform: scale(1.2, 1.2); */
+    }
+    75% {
+        background-color: black;
+    }
+    100% {
+        background-color: red;
+        /* transform: scale(1, 1); */
+    }
+}
