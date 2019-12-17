@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <?php include ('mail.php'); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
@@ -28,18 +29,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contacto</a>
                 </li>
-                <li class="nav-item">
+                <!--  <li class="nav-item">
                     <a class="nav-link" href="#about">Historia</a>
-                </li>
-            </ul>
-            <ul class="form-inline my-2 my-lg-0 ">
-                <h3 class="display-3">
-                    <il> <a href="https://wa.me/56951787063"><i id="whatsapp" class="fab fa-whatsapp-square"></i></a></il>
-                    <il> <a href="https://www.instagram.com/kungfuguangong/"><i id="instagram" class="fab fa-instagram"></i></a></il>
-                    <il> <a href="https://www.facebook.com/kungfulaflorida/"><i id="facebook" class="fab fa-facebook-square"></i></a></il>
-                </h3>
+                </li> -->
             </ul>
         </div>
+                <ul class="form-inline my-2 my-lg-0 ">
+                    <h3 class="display-3">
+                        <il> <a href="https://wa.me/56951787063"><i id="whatsapp" class="fab fa-whatsapp-square"></i></a></il>
+                        <il> <a href="https://www.instagram.com/kungfuguangong/"><i id="instagram" class="fab fa-instagram"></i></a></il>
+                        <il> <a href="https://www.facebook.com/kungfulaflorida/"><i id="facebook" class="fab fa-facebook-square"></i></a></il>
+                    </h3>
+                </ul>
     </nav>
 
     <section id="hero">
@@ -74,57 +75,52 @@
     <section id="contact">
         <div class="container">
             <div class="row pt-5">
-                <div class="col-md-6 col-md-offset-3">
-                    <h1 class="text-light text-center mb-3">Contacto</h1>
+                <div class="col-md-6 col-md-offset-3 mt-3">
+                    <h1 class="text-light text-center">Contacto</h1>
                     <form class="form-horizontal" role="form" method="post" action="index.php">
                         <div class="form-group">
                             <strong class="text-secondary" style="color: rgb(255,255,255);margin: 5px;padding: 5px;">Nombre</strong>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre completo" value="">
-                                <p class="text-danger"></p>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre completo" value=''>
+                                <?php echo "<p class='text-danger'>$errName</p>";?>
                             </div>
                         </div>
                         <div class="form-group">
                             <strong class="text-secondary" style="color: rgb(255,255,255);margin: 5px;padding: 5px;">Email</strong>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@gmail.com" value="">
-                                <p class="text-danger"></p>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@gmail.com" value=''>
+                                <?php echo "<p class='text-danger'>$errEmail</p>";?>
                             </div>
                         </div>
                         <div class="form-group">
                             <strong class="text-secondary" style="color: rgb(255,255,255);margin: 5px;padding: 5px;">Mensaje</strong>
                             <div class="col-sm-10">
-                                <textarea class="form-control" rows="4" name="message" value=""></textarea>
-                                <p class="text-danger"></p>
+                                <textarea class="form-control" rows="4" name="message" value=''></textarea>
+                                <?php echo "<p class='text-danger'>$errMessage</p>";?>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-10">
-                                <div class="g-recaptcha" data-sitekey="6LfXu6YUAAAAALl_4POI89ZC8soIBgAf_rbG-sV8">
-                                    <div style="width: 304px; height: 78px;">
-                                        <div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfXu6YUAAAAALl_4POI89ZC8soIBgAf_rbG-sV8&amp;co=aHR0cDovL2t1bmdmdWxhZmxvcmlkYS5jbDo4MA..&amp;hl=es-419&amp;v=PRkVene3wKrZUWATSylf69ja&amp;size=normal&amp;cb=9xum06wq30xi"
-                                                width="304" height="78" role="presentation" name="a-x3lth1cplx7z" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div>
-                                        <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-                                    </div>
-                                </div>
-                                <p class="text-danger"></p> <br>
+                                <div class="g-recaptcha" data-sitekey="6LfXu6YUAAAAALl_4POI89ZC8soIBgAf_rbG-sV8"></div>
+                                <?php echo "<p class='text-danger'>$errCapt</p>";?>
+                                </br>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-10 col-sm-offset-2">
-
                                 <input id="submit" name="submit" type="submit" value="Enviar" class="btn btn-primary">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-10 col-sm-offset-2">
+                                <?php echo $result; ?>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-6 col-md-offset-3 mt-3 mb-3">
                     <h1 class="text-light text-center mb-3">Ubicación</h1>
                     <iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAz6OJtcaqlTf4Sd3ppY_dmMvz8dCvfRNg&amp;q=millaray+20%2C+la+florida&amp;zoom=14" width="100%" height="400"></iframe>
                 </div>
@@ -203,10 +199,11 @@
     <script type="text/javascript " async=" " src="https://www.gstatic.com/recaptcha/releases/PRkVene3wKrZUWATSylf69ja/recaptcha__es_419.js "></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
-    <script src="/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+    <!-- <script src="assets/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://www.google.com/recaptcha/api.js " async=" " defer=" "></script>
 
-    <script>
+    <!-- <script>
         var template_params = {
             "name": "name_value",
             "email": "email_value",
@@ -216,7 +213,7 @@
         var service_id = "default_service";
         var template_id = "kungfulaflorida";
         emailjs.send(service_id, template_id, template_params);
-    </script>
+    </script> -->
 
 
 </body>
